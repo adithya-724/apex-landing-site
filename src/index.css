@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-glow-red {
+    text-shadow: 0 0 15px rgba(225, 29, 72, 0.6), 0 0 40px rgba(225, 29, 72, 0.3);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5), 0 0 30px rgba(245, 158, 11, 0.3);
+  }
+
+  .neon-glow-red {
+    filter: drop-shadow(0 0 12px rgba(225, 29, 72, 0.4));
+  }
+
+  .box-glow-red {
+    box-shadow: 0 0 20px rgba(225, 29, 72, 0.4), 0 0 60px rgba(225, 29, 72, 0.2);
+  }
+
+  .box-glow-gold {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 0 0 45px rgba(245, 158, 11, 0.15);
+  }
+}
+
+@layer components {
+  .racing-line {
+    stroke-dasharray: 10;
+    animation: dash 20s linear infinite;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

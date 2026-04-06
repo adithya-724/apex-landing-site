@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="20" fill="#0A0A0A"/>
+  <!-- Lightning bolt A -->
+  <path d="M60 160 L100 20 L110 80 L150 80 L95 180 L88 110 L60 110 Z" fill="#E11D48" stroke="#E11D48" stroke-width="2"/>
+  <!-- Inner highlight -->
+  <path d="M80 140 L100 50 L105 85 L135 85 L98 160 L93 115 L80 115 Z" fill="#FF586C" opacity="0.3"/>
+</svg>

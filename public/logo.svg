@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" fill="none">
+  <!-- Lightning bolt icon -->
+  <path d="M8 50 L25 5 L28 22 L42 22 L22 55 L20 35 L8 35 Z" fill="#E11D48"/>
+  <!-- APEX text -->
+  <text x="52" y="43" font-family="sans-serif" font-weight="900" font-size="38" fill="white" letter-spacing="-1">APEX</text>
+  <!-- KARTING text -->
+  <text x="160" y="43" font-family="sans-serif" font-weight="900" font-size="38" fill="#F59E0B" letter-spacing="-1">KARTING</text>
+</svg>
