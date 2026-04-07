@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { ChevronRight, Gauge, Route, Timer, Flag } from 'lucide-react'
 import SpeedLines from './SpeedLines'
+import TiltCard from './TiltCard'
 
 const STATS = [
   { icon: Gauge, value: '60 KM/H', label: 'Top Speed' },
@@ -193,15 +195,25 @@ export default function ParticleHero({ particleCount = 20 }) {
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-24">
         <div className="text-center max-w-5xl mx-auto mt-8">
           {/* Tagline pill */}
-          <div className="mb-6">
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/[0.04] backdrop-blur-md rounded-full text-sm text-apex-gold uppercase tracking-[0.25em] font-body border border-apex-gold/10">
               <Flag className="w-3.5 h-3.5" />
               India's Premier Indoor Karting
             </span>
-          </div>
+          </motion.div>
 
           {/* Headline */}
-          <h1 className="text-7xl md:text-[9rem] lg:text-[12rem] font-display font-black tracking-tighter leading-[0.85] mb-4">
+          <motion.h1
+            className="text-7xl md:text-[9rem] lg:text-[12rem] font-display font-black tracking-tighter leading-[0.85] mb-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             <span className="bg-gradient-to-b from-white via-red-200 to-red-600 bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 0 40px rgba(225,29,72,0.3))' }}>
               FEEL THE
             </span>
@@ -209,36 +221,53 @@ export default function ParticleHero({ particleCount = 20 }) {
             <span className="bg-gradient-to-b from-amber-200 via-amber-400 to-amber-700 bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 0 30px rgba(245,158,11,0.25))' }}>
               SPEED
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Divider with dot */}
-          <div className="flex items-center justify-center gap-3 mb-8">
+          <motion.div
+            className="flex items-center justify-center gap-3 mb-8"
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-apex-red" />
             <div className="w-2 h-2 rounded-full bg-apex-red animate-pulse" />
             <div className="w-16 h-px bg-gradient-to-l from-transparent to-apex-red" />
-          </div>
+          </motion.div>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-neutral-400 font-body max-w-2xl mx-auto leading-relaxed mb-14">
+          <motion.p
+            className="text-lg md:text-xl text-neutral-400 font-body max-w-2xl mx-auto leading-relaxed mb-14"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             Experience the rush of professional indoor karting on India's most advanced racing circuit.
             Challenge your limits. Beat the clock. Own the podium.
-          </p>
+          </motion.p>
 
-          {/* Stat Badges */}
+          {/* Stat Badges — 3D Tilt */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-14">
-            {STATS.map((stat) => (
-              <div
+            {STATS.map((stat, i) => (
+              <motion.div
                 key={stat.label}
-                className="bg-black/50 backdrop-blur-lg border border-white/[0.06] px-7 py-4 flex items-center gap-4 group hover:border-apex-gold/30 hover:bg-white/[0.03] transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 + i * 0.12 }}
               >
-                <div className="w-10 h-10 rounded-full bg-apex-red/10 flex items-center justify-center group-hover:bg-apex-red/20 transition-colors">
-                  <stat.icon className="w-5 h-5 text-apex-gold" />
-                </div>
-                <div>
-                  <span className="font-display text-xl text-white block leading-tight">{stat.value}</span>
-                  <span className="text-apex-muted text-[10px] uppercase tracking-widest font-body">{stat.label}</span>
-                </div>
-              </div>
+                <TiltCard
+                  className="bg-black/50 backdrop-blur-lg border border-white/[0.06] px-7 py-4 flex items-center gap-4 group hover:border-apex-gold/30 hover:bg-white/[0.03] transition-all duration-300 cursor-default"
+                  glowColor="rgba(245,158,11,0.12)"
+                >
+                  <div className="w-10 h-10 rounded-full bg-apex-red/10 flex items-center justify-center group-hover:bg-apex-red/20 transition-colors">
+                    <stat.icon className="w-5 h-5 text-apex-gold" />
+                  </div>
+                  <div>
+                    <span className="font-display text-xl text-white block leading-tight">{stat.value}</span>
+                    <span className="text-apex-muted text-[10px] uppercase tracking-widest font-body">{stat.label}</span>
+                  </div>
+                </TiltCard>
+              </motion.div>
             ))}
           </div>
 

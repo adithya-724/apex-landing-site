@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { ChevronRight, Trophy, Baby, Flag, Flame, Users, Timer, Gauge, ArrowRight } from 'lucide-react'
 import ParticleHero from '../components/ParticleHero'
+import TiltCard from '../components/TiltCard'
 import SpeedLines from '../components/SpeedLines'
 import CountdownTimer from '../components/CountdownTimer'
 import TestimonialSlider from '../components/TestimonialSlider'
@@ -81,73 +83,86 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {EXPERIENCES.map((exp) => {
+            {EXPERIENCES.map((exp, index) => {
               const Icon = exp.icon
+              const glowColor = exp.featured
+                ? 'rgba(245,158,11,0.2)'
+                : exp.title === 'Pro Circuit'
+                  ? 'rgba(225,29,72,0.2)'
+                  : 'rgba(34,197,94,0.2)'
               return (
-                <div
+                <motion.div
                   key={exp.title}
-                  className={`group relative bg-apex-surface rounded-xl border ${exp.borderColor} ${exp.hoverBorder} transition-all duration-500 overflow-hidden cursor-pointer ${
-                    exp.featured ? 'md:-translate-y-3 shadow-[0_0_50px_rgba(245,158,11,0.08)]' : ''
-                  }`}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
                 >
-                  {/* Top gradient wash */}
-                  <div className={`absolute top-0 left-0 w-full h-40 bg-gradient-to-b ${exp.gradient} pointer-events-none`} />
+                  <TiltCard
+                    className={`group relative bg-apex-surface rounded-xl border ${exp.borderColor} ${exp.hoverBorder} transition-all duration-500 overflow-hidden cursor-pointer ${
+                      exp.featured ? 'md:-translate-y-3 shadow-[0_0_50px_rgba(245,158,11,0.08)]' : ''
+                    }`}
+                    glowColor={glowColor}
+                  >
+                    {/* Top gradient wash */}
+                    <div className={`absolute top-0 left-0 w-full h-40 bg-gradient-to-b ${exp.gradient} pointer-events-none`} />
 
-                  {/* Most Popular badge */}
-                  {exp.featured && (
-                    <div className="absolute top-4 right-4 z-10 bg-apex-gold text-black font-bold text-[10px] tracking-widest px-3 py-1 uppercase rounded-full font-body">
-                      Most Popular
-                    </div>
-                  )}
-
-                  <div className="relative p-8 pt-10">
-                    {/* Icon */}
-                    <div className={`w-14 h-14 rounded-xl ${exp.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className={`w-7 h-7 ${exp.iconColor}`} />
-                    </div>
-
-                    {/* Title + tagline */}
-                    <div className="mb-4">
-                      <h3 className="font-display text-2xl text-white uppercase mb-1">{exp.title}</h3>
-                      <span className={`text-xs font-body uppercase tracking-widest ${exp.accentColor}`}>{exp.tagline}</span>
-                    </div>
-
-                    <p className="text-apex-muted text-sm mb-8 font-body leading-relaxed">{exp.desc}</p>
-
-                    {/* Stats row */}
-                    <div className="flex gap-6 mb-8">
-                      <div className="flex items-center gap-2">
-                        <Timer className="w-3.5 h-3.5 text-apex-muted" />
-                        <span className="text-xs text-apex-muted font-body">{exp.duration}</span>
+                    {/* Most Popular badge */}
+                    {exp.featured && (
+                      <div className="absolute top-4 right-4 z-10 bg-apex-gold text-black font-bold text-[10px] tracking-widest px-3 py-1 uppercase rounded-full font-body">
+                        Most Popular
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Gauge className="w-3.5 h-3.5 text-apex-muted" />
-                        <span className="text-xs text-apex-muted font-body">{exp.speed}</span>
+                    )}
+
+                    <div className="relative p-8 pt-10">
+                      {/* Icon */}
+                      <div className={`w-14 h-14 rounded-xl ${exp.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className={`w-7 h-7 ${exp.iconColor}`} />
+                      </div>
+
+                      {/* Title + tagline */}
+                      <div className="mb-4">
+                        <h3 className="font-display text-2xl text-white uppercase mb-1">{exp.title}</h3>
+                        <span className={`text-xs font-body uppercase tracking-widest ${exp.accentColor}`}>{exp.tagline}</span>
+                      </div>
+
+                      <p className="text-apex-muted text-sm mb-8 font-body leading-relaxed">{exp.desc}</p>
+
+                      {/* Stats row */}
+                      <div className="flex gap-6 mb-8">
+                        <div className="flex items-center gap-2">
+                          <Timer className="w-3.5 h-3.5 text-apex-muted" />
+                          <span className="text-xs text-apex-muted font-body">{exp.duration}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Gauge className="w-3.5 h-3.5 text-apex-muted" />
+                          <span className="text-xs text-apex-muted font-body">{exp.speed}</span>
+                        </div>
+                      </div>
+
+                      {/* Divider */}
+                      <div className="h-px bg-white/5 mb-6" />
+
+                      {/* Price + CTA */}
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className={`font-display text-3xl ${exp.featured ? 'text-apex-gold' : 'text-white'}`}>{exp.price}</span>
+                          <span className="text-apex-muted text-xs ml-2 font-body">/ session</span>
+                        </div>
+                        <Link
+                          to="/booking"
+                          className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${
+                            exp.featured
+                              ? 'bg-apex-gold text-black hover:bg-apex-gold-light'
+                              : 'bg-white/5 text-white hover:bg-white/10'
+                          }`}
+                        >
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
                       </div>
                     </div>
-
-                    {/* Divider */}
-                    <div className="h-px bg-white/5 mb-6" />
-
-                    {/* Price + CTA */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className={`font-display text-3xl ${exp.featured ? 'text-apex-gold' : 'text-white'}`}>{exp.price}</span>
-                        <span className="text-apex-muted text-xs ml-2 font-body">/ session</span>
-                      </div>
-                      <Link
-                        to="/booking"
-                        className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${
-                          exp.featured
-                            ? 'bg-apex-gold text-black hover:bg-apex-gold-light'
-                            : 'bg-white/5 text-white hover:bg-white/10'
-                        }`}
-                      >
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                  </TiltCard>
+                </motion.div>
               )
             })}
           </div>
