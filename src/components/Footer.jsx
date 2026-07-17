@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Zap, Instagram, Youtube, Twitter, MapPin, Clock, Phone } from 'lucide-react'
+import { Instagram, Youtube, Twitter, MapPin, Clock, Phone } from 'lucide-react'
 import { PHONE_NUMBER, PHONE_HREF } from '../constants'
+import apexLogo from '../assets/apex-logo.png'
 
 export default function Footer() {
   return (
@@ -9,11 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <Zap className="w-5 h-5 text-apex-red" />
-              <span className="text-xl font-display font-bold text-white uppercase">
-                Apex Karting Arena
-              </span>
+            <Link to="/" className="inline-flex items-center mb-4">
+              <img src={apexLogo} alt="Apex Karting" className="h-10 w-auto rounded-md" />
             </Link>
             <p className="text-apex-muted text-sm leading-relaxed">
               Coimbatore's premier outdoor go-karting experience. Engineered for velocity, built for champions.

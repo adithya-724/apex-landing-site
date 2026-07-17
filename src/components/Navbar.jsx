@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Zap, Phone } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { PHONE_NUMBER, PHONE_HREF } from '../constants'
+import apexLogo from '../assets/apex-logo.png'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -34,11 +35,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <Zap className="w-6 h-6 text-apex-red group-hover:text-apex-red-light transition-colors" />
-          <span className="text-2xl font-display font-black tracking-tighter text-white uppercase">
-APEX KARTING ARENA
-          </span>
+        <Link to="/" className="flex items-center group">
+          <img src={apexLogo} alt="Apex Karting" className="h-9 sm:h-10 md:h-12 w-auto rounded-md" />
         </Link>
 
         {/* Desktop Nav */}

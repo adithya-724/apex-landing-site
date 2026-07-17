@@ -23,6 +23,14 @@ export default function ParticleHero({ particleCount = 20 }) {
 
   const rows = particleCount
   const totalParticles = rows * rows
+  const [spacing, setSpacing] = useState(1.4)
+
+  useEffect(() => {
+    const updateSpacing = () => setSpacing(window.innerWidth < 640 ? 0.85 : 1.4)
+    updateSpacing()
+    window.addEventListener('resize', updateSpacing)
+    return () => window.removeEventListener('resize', updateSpacing)
+  }, [])
 
   useEffect(() => {
     const container = containerRef.current
@@ -54,8 +62,8 @@ export default function ParticleHero({ particleCount = 20 }) {
       particle.style.cssText = `
         width: ${normalizedDist < 0.2 ? '0.5rem' : '0.3rem'};
         height: ${normalizedDist < 0.2 ? '0.5rem' : '0.3rem'};
-        left: ${col * 1.4}rem;
-        top: ${row * 1.4}rem;
+        left: ${col * spacing}rem;
+        top: ${row * spacing}rem;
         transform: scale(${scale});
         opacity: ${opacity};
         background: hsl(${hue}, ${saturation}%, ${lightness}%);
@@ -68,7 +76,7 @@ export default function ParticleHero({ particleCount = 20 }) {
       container.appendChild(particle)
       particlesRef.current.push(particle)
     }
-  }, [rows, totalParticles])
+  }, [rows, totalParticles, spacing])
 
   useEffect(() => {
     const animate = () => {
@@ -158,7 +166,7 @@ export default function ParticleHero({ particleCount = 20 }) {
       />
 
       {/* Massive radial glow behind particles */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] sm:w-[600px] sm:h-[600px] lg:w-[900px] lg:h-[900px] pointer-events-none">
         <div className="absolute inset-0 rounded-full bg-gradient-to-b from-red-600/15 via-red-900/10 to-transparent blur-3xl" />
         <div className="absolute inset-[15%] rounded-full bg-gradient-to-b from-amber-500/10 via-transparent to-transparent blur-2xl" />
       </div>
@@ -171,7 +179,7 @@ export default function ParticleHero({ particleCount = 20 }) {
         <div
           ref={containerRef}
           className="relative"
-          style={{ width: `${rows * 1.4}rem`, height: `${rows * 1.4}rem` }}
+          style={{ width: `${rows * spacing}rem`, height: `${rows * spacing}rem` }}
         />
       </div>
 
