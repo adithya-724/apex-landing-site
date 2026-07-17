@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom'
-import { ChevronRight, Trophy, Baby, Flag, Flame, Users, Timer, Gauge, ArrowRight } from 'lucide-react'
+import { ChevronRight, Trophy, Baby, Flag, Flame, Timer, Gauge } from 'lucide-react'
 import ParticleHero from '../components/ParticleHero'
 import SpeedLines from '../components/SpeedLines'
 import CountdownTimer from '../components/CountdownTimer'
-import TestimonialSlider from '../components/TestimonialSlider'
+import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 const EXPERIENCES = [
   {
     title: 'Junior Racers',
     tagline: 'Ages 7-12',
     desc: 'Safe, fun, and fast-paced entry into racing. Perfect for young champions starting their journey.',
-    price: '₹799',
     duration: '10 MIN',
     speed: '30 KM/H',
     icon: Baby,
@@ -25,7 +24,6 @@ const EXPERIENCES = [
     title: 'Grand Prix',
     tagline: 'Ages 13+',
     desc: 'Our flagship experience. Full heat, qualifying rounds, and podium finish. The real deal.',
-    price: '₹1,299',
     duration: '15 MIN',
     speed: '50 KM/H',
     icon: Flag,
@@ -41,7 +39,6 @@ const EXPERIENCES = [
     title: 'Pro Circuit',
     tagline: 'Ages 18+',
     desc: 'For the elite. High-torque karts, aggressive lines, and championship-grade telemetry.',
-    price: '₹1,999',
     duration: '20 MIN',
     speed: '60 KM/H',
     icon: Flame,
@@ -115,7 +112,7 @@ export default function Home() {
                     <p className="text-apex-muted text-sm mb-8 font-body leading-relaxed">{exp.desc}</p>
 
                     {/* Stats row */}
-                    <div className="flex gap-6 mb-8">
+                    <div className="flex gap-6">
                       <div className="flex items-center gap-2">
                         <Timer className="w-3.5 h-3.5 text-apex-muted" />
                         <span className="text-xs text-apex-muted font-body">{exp.duration}</span>
@@ -124,27 +121,6 @@ export default function Home() {
                         <Gauge className="w-3.5 h-3.5 text-apex-muted" />
                         <span className="text-xs text-apex-muted font-body">{exp.speed}</span>
                       </div>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="h-px bg-white/5 mb-6" />
-
-                    {/* Price + CTA */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className={`font-display text-3xl ${exp.featured ? 'text-apex-gold' : 'text-white'}`}>{exp.price}</span>
-                        <span className="text-apex-muted text-xs ml-2 font-body">/ session</span>
-                      </div>
-                      <Link
-                        to="/booking"
-                        className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${
-                          exp.featured
-                            ? 'bg-apex-gold text-black hover:bg-apex-gold-light'
-                            : 'bg-white/5 text-white hover:bg-white/10'
-                        }`}
-                      >
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
                     </div>
                   </div>
                 </div>
@@ -168,9 +144,6 @@ export default function Home() {
       {/* COUNTDOWN TIMER */}
       <CountdownTimer />
 
-      {/* TESTIMONIALS */}
-      <TestimonialSlider />
-
       {/* FINAL CTA */}
       <section className="py-28 bg-apex-surface relative overflow-hidden">
         <SpeedLines color="#F59E0B" count={12} className="opacity-[0.06]" />
@@ -184,15 +157,15 @@ export default function Home() {
             READY TO <span className="text-apex-red">RACE</span>?
           </h2>
           <p className="text-apex-muted mb-10 text-lg max-w-lg mx-auto">
-            Book your session now and experience the thrill of professional indoor karting.
+            Walk in and experience the thrill of professional outdoor karting. No booking needed.
           </p>
-          <Link
-            to="/booking"
+          <a
+            href={PHONE_HREF}
             className="inline-flex items-center gap-2 bg-apex-red text-white text-lg px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
           >
-            BOOK YOUR RACE NOW
+            CALL {PHONE_NUMBER}
             <ChevronRight className="w-5 h-5" />
-          </Link>
+          </a>
         </div>
       </section>
     </main>

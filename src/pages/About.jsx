@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom'
 import {
-  Shield, HardHat, Gauge, UserCheck, Wind, Eye, CheckCircle, ChevronRight,
+  Shield, HardHat, Gauge, UserCheck, Moon, Eye, CheckCircle, ChevronRight,
 } from 'lucide-react'
+import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 const EXPECT_CARDS = [
   { icon: Shield, title: 'Safety Briefing', desc: 'Detailed video and physical briefing session before every race for all drivers.', color: 'text-apex-red', border: 'border-apex-red' },
   { icon: HardHat, title: 'Helmet & Gear Provided', desc: 'Pro-grade racing suits, sanitized helmets, and head socks for maximum safety.', color: 'text-apex-gold', border: 'border-apex-gold' },
   { icon: Gauge, title: 'Real-Time Lap Timing', desc: 'Precision telemetry for every driver. Compare sectoral times on trackside displays.', color: 'text-apex-red', border: 'border-apex-red' },
   { icon: UserCheck, title: 'Professional Marshals', desc: 'Trained track-side marshals ensure fair racing, safety, and expert guidance.', color: 'text-apex-gold', border: 'border-apex-gold' },
-  { icon: Wind, title: 'Air-Conditioned Facility', desc: 'Climate-controlled indoor environment stays cool even when the action is hot.', color: 'text-apex-red', border: 'border-apex-red' },
+  { icon: Moon, title: 'Floodlit Night Racing', desc: 'Race after dark under full floodlights for a true circuit-night atmosphere.', color: 'text-apex-red', border: 'border-apex-red' },
   { icon: Eye, title: 'Spectator Viewing Area', desc: 'Elevated viewing deck with live timing feeds for friends and family.', color: 'text-apex-gold', border: 'border-apex-gold' },
 ]
 
@@ -26,7 +26,7 @@ export default function About() {
           <img
             className="w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqNn1mZ8OzsDju5kD1deaYNSRH3dVjsEk98p04OJPIgcAd2tr4eJ_Jm_Zw8SDSoch5ZCR4vT3Xjnv7mPOKdviksZWPdKcKF7WqM2_aKpJ-N1c4O99In7MSzJEcYjN-spz2-h2bZRVFxLbEGjio8jcTS-wiZYd4Q_ZwYB6opzY_1uq1QBNams1c0bMsKj34IRVmr0Ora65gGrqoS4UJMz-L7UBJubThzCPNlQ4bsPA0B90WMt0VUnrmeY3j5VljyfQYPj28vQ02XWU"
-            alt="Indoor karting track at night"
+            alt="Outdoor karting track at night"
           />
         </div>
         <div className="relative z-10 container mx-auto px-6 text-center">
@@ -34,7 +34,7 @@ export default function About() {
             ABOUT <span className="text-apex-red">THE TRACK</span>
           </h1>
           <p className="mt-6 text-apex-muted max-w-2xl mx-auto text-lg md:text-xl">
-            Engineered for high-stakes competition. Experience India's most technical indoor circuit with telemetry-grade precision.
+            Engineered for high-stakes competition. Experience Coimbatore's most technical outdoor circuit with telemetry-grade precision.
           </p>
         </div>
       </header>
@@ -51,12 +51,12 @@ export default function About() {
                 MASTER THE <br /><span className="text-apex-gold">APEX LINE</span>
               </h2>
               <p className="text-apex-muted leading-relaxed">
-                Our 850m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 4 sweeper to the technical Turn 7 hairpin, every meter is a battle for the podium.
+                Our 550m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 4 sweeper to the technical Turn 7 hairpin, every meter is a battle for the podium.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-apex-surface-high border-l-2 border-apex-red">
                   <div className="text-xs text-apex-muted uppercase mb-1">Track Length</div>
-                  <div className="text-2xl font-display">850M</div>
+                  <div className="text-2xl font-display">550M</div>
                 </div>
                 <div className="p-4 bg-apex-surface-high border-l-2 border-apex-gold">
                   <div className="text-xs text-apex-muted uppercase mb-1">Max Speed</div>
@@ -144,7 +144,7 @@ export default function About() {
             <div className="mt-16 p-8 bg-apex-black border border-white/5 relative">
               <div className="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-apex-red" />
               <p className="text-apex-muted italic leading-relaxed">
-                "At Apex Karting, we believe velocity should never compromise safety. Every kart is inspected daily and our systems are monitored by real-time telemetry to ensure the safest high-performance experience in the country."
+                "At Apex Karting Arena, we believe velocity should never compromise safety. Every kart is inspected daily and our systems are monitored by real-time telemetry to ensure the safest high-performance experience in Coimbatore."
               </p>
               <div className="mt-4 text-apex-red font-bold font-display text-sm">— RACING STEWARD CORE</div>
             </div>
@@ -156,13 +156,13 @@ export default function About() {
       <section className="py-20 bg-apex-black border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-display text-4xl text-white uppercase mb-4">EXPERIENCE THE APEX</h2>
-          <p className="text-apex-muted mb-8">Book your session and feel the rush of professional indoor karting.</p>
-          <Link
-            to="/booking"
+          <p className="text-apex-muted mb-8">Walk in and feel the rush of professional outdoor karting.</p>
+          <a
+            href={PHONE_HREF}
             className="inline-flex items-center gap-2 bg-apex-red text-white px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
           >
-            BOOK YOUR RACE <ChevronRight className="w-5 h-5" />
-          </Link>
+            CALL {PHONE_NUMBER} <ChevronRight className="w-5 h-5" />
+          </a>
         </div>
       </section>
     </main>

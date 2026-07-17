@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { ChevronRight, Users, Timer, Gauge, Trophy, Baby, Shield, Check } from 'lucide-react'
+import { ChevronRight, Users, Timer, Gauge, Trophy, Baby, Shield } from 'lucide-react'
+import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 const TIERS = [
   {
@@ -9,13 +9,10 @@ const TIERS = [
     age: '7-12 years',
     duration: '10 Minutes Session',
     speed: 'Top Speed: 30 KM/H',
-    price: '₹799',
     borderColor: 'border-green-500/50',
     tagColor: 'text-green-400',
     icon: Baby,
     features: ['6.5 HP Karts', 'Dedicated junior track', 'Professional supervision', 'Safety gear included'],
-    cta: 'Book Junior Race',
-    ctaStyle: 'border border-apex-border hover:bg-white hover:text-black',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDdPv_rrT09DoQiLcYO6gA3c_ZfuDw600lnkJXZccnGHzc0A2g7sdujwmvHkHyy2IXWIQ6lDabrPQ5dsjbwEu4hR3lp0NeYLiLNZ62QaIMSPvJVrg-bCg8qtXCvshbdqZ8GFCA32q_2bfO5x7U-FNFa4FIQdr6hfy00pzPym1QpFAI8g6pUC3yM0oErqb78y6h-Tm92CLW7hTYcLaxPISjXggIpNUlKVL21Qn1XbOIQyksLr-hQODJnPkioMUK2k9IzoTxUFqso_Is',
   },
   {
@@ -25,14 +22,11 @@ const TIERS = [
     age: '13+ years',
     duration: '15 Minutes Session',
     speed: 'Top Speed: 50 KM/H',
-    price: '₹1,299',
     featured: true,
     borderColor: 'border-apex-gold',
     tagColor: 'text-apex-gold',
     icon: Trophy,
     features: ['9 HP Sodi Karts', 'Full telemetry reporting', 'Qualifying rounds', 'Podium ceremony'],
-    cta: 'Book Grand Prix',
-    ctaStyle: 'bg-apex-red text-white animate-pulse-glow',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0zcK4n62F2TqYofkJgJYF3gX4zpsI_2txIeXimWgBxjj1ohbFQgsdURq3j9SdlNijAytoh6ob2I-bOPwpNu3cT8CRkgjYrFATdIp4zSDfVf7zOXBpkWQJ8U5dgBQ-U-7Z9YJLR2Dous9U6-0ZDsE4MMplB4o38M0HHTZ5HFXnlEkfoexNsDkTkDuOKcfl0P3HwiTn-7TGA2acHnimu61RKmAxIict3q5o19qKBGiRnhRmuU7kWA2ro1IgE7FUFf-I1jMsppYP3_A',
   },
   {
@@ -42,13 +36,10 @@ const TIERS = [
     age: '18+ (Exp Required)',
     duration: '20 Minutes Session',
     speed: 'Top Speed: 60 KM/H',
-    price: '₹1,999',
     borderColor: 'border-apex-red/50',
     tagColor: 'text-apex-red',
     icon: Shield,
     features: ['13 HP Karts', 'Advanced telemetry', 'Competitive league eligible', 'Championship points'],
-    cta: 'Book Pro Circuit',
-    ctaStyle: 'border border-apex-border hover:bg-white hover:text-black',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA9vaN-XGLlqTPJWLgkr-g66hZptlvt31RPUM8Q5DNZOcsdoqOXwuwNdoaQXn1OkCLpVb3cy6lmGGBD27iClPF-u6UAx_yfbkLc8xZq4xdUPEnv3O3s2UwSt7N0byPWwWYFeXzn5q-X2VVeV_IFp5mYqEp6qtcQVwfODCHYBObn4NXeiLdG33ietIEsqZ7qHE10-29z4FRhaU463NAzPHIVRKK0kQ8WoZOwGYC0UsLScUiTxj0luOA9PWK1-L4Df0zdWBYK3wgey3M',
   },
 ]
@@ -59,7 +50,6 @@ const COMPARISON = [
   { feature: 'Top Speed', junior: '30 km/h', grandPrix: '50 km/h', pro: '60 km/h' },
   { feature: 'Kart Power', junior: '6.5 HP', grandPrix: '9 HP', pro: '13 HP' },
   { feature: 'Telemetry', junior: 'Basic', grandPrix: 'Full', pro: 'Advanced' },
-  { feature: 'Price', junior: '₹799', grandPrix: '₹1,299', pro: '₹1,999' },
 ]
 
 export default function Experiences() {
@@ -71,7 +61,7 @@ export default function Experiences() {
           <img
             className="w-full h-full object-cover opacity-30 grayscale"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdPv_rrT09DoQiLcYO6gA3c_ZfuDw600lnkJXZccnGHzc0A2g7sdujwmvHkHyy2IXWIQ6lDabrPQ5dsjbwEu4hR3lp0NeYLiLNZ62QaIMSPvJVrg-bCg8qtXCvshbdqZ8GFCA32q_2bfO5x7U-FNFa4FIQdr6hfy00pzPym1QpFAI8g6pUC3yM0oErqb78y6h-Tm92CLW7hTYcLaxPISjXggIpNUlKVL21Qn1XbOIQyksLr-hQODJnPkioMUK2k9IzoTxUFqso_Is"
-            alt="Go-kart racing on indoor track"
+            alt="Go-kart racing on outdoor track"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-apex-black via-transparent to-apex-black" />
         </div>
@@ -81,7 +71,7 @@ export default function Experiences() {
               Engineered for Velocity
             </span>
           </div>
-          <h1 className="font-display text-6xl md:text-8xl text-white uppercase tracking-tighter text-glow-red leading-none mb-6">
+          <h1 className="font-display text-5xl md:text-8xl text-white uppercase tracking-tighter text-glow-red leading-none mb-6">
             OUR EXPERIENCES
           </h1>
           <p className="max-w-xl mx-auto text-apex-muted font-body text-lg leading-relaxed">
@@ -129,19 +119,8 @@ export default function Experiences() {
                 </div>
               </div>
 
-              <div className="mt-auto">
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className={`${tier.featured ? 'text-5xl' : 'text-4xl'} font-display text-white`}>
-                    {tier.price}
-                  </span>
-                  <span className="text-apex-muted text-xs uppercase font-body">/ Session</span>
-                </div>
-                <Link
-                  to="/booking"
-                  className={`w-full block text-center py-4 font-body font-bold uppercase tracking-widest text-sm transition-all duration-300 cursor-pointer ${tier.ctaStyle}`}
-                >
-                  {tier.cta}
-                </Link>
+              <div className="mt-auto pt-6 border-t border-white/5 text-center">
+                <span className="text-apex-muted text-xs uppercase tracking-widest font-body">Walk-ins Welcome</span>
               </div>
             </div>
           ))}
@@ -182,13 +161,13 @@ export default function Experiences() {
       <section className="py-20 bg-apex-surface border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-display text-4xl text-white uppercase mb-4">READY TO HIT THE TRACK?</h2>
-          <p className="text-apex-muted mb-8">Choose your tier and book your session today.</p>
-          <Link
-            to="/booking"
+          <p className="text-apex-muted mb-8">Choose your tier and walk in today. No booking required.</p>
+          <a
+            href={PHONE_HREF}
             className="inline-flex items-center gap-2 bg-apex-red text-white px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
           >
-            BOOK NOW <ChevronRight className="w-5 h-5" />
-          </Link>
+            CALL {PHONE_NUMBER} <ChevronRight className="w-5 h-5" />
+          </a>
         </div>
       </section>
     </main>

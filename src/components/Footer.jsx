@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Zap, Instagram, Youtube, Twitter, MapPin, Clock, Phone } from 'lucide-react'
+import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 export default function Footer() {
   return (
@@ -11,11 +12,11 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-2 mb-4">
               <Zap className="w-5 h-5 text-apex-red" />
               <span className="text-xl font-display font-bold text-white uppercase">
-                Apex Karting
+                Apex Karting Arena
               </span>
             </Link>
             <p className="text-apex-muted text-sm leading-relaxed">
-              India's premier indoor go-karting experience. Engineered for velocity, built for champions.
+              Coimbatore's premier outdoor go-karting experience. Engineered for velocity, built for champions.
             </p>
             <div className="flex gap-4 mt-6">
               <a href="#" className="text-apex-muted hover:text-apex-red transition-colors cursor-pointer" aria-label="Instagram">
@@ -36,7 +37,6 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <Link to="/experiences" className="text-apex-muted hover:text-apex-red text-sm transition-colors">Experiences</Link>
               <Link to="/about" className="text-apex-muted hover:text-apex-red text-sm transition-colors">About the Track</Link>
-              <Link to="/booking" className="text-apex-muted hover:text-apex-red text-sm transition-colors">Book a Race</Link>
               <a href="#" className="text-apex-muted hover:text-apex-red text-sm transition-colors">Safety Protocols</a>
               <a href="#" className="text-apex-muted hover:text-apex-red text-sm transition-colors">Corporate Events</a>
             </div>
@@ -48,11 +48,11 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-sm text-apex-muted">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-apex-red flex-shrink-0" />
-                <span>Apex Karting Arena, Sector 18, Gurugram, Haryana 122015</span>
+                <span>Therku Thottam, Kondayampalayam Rd, Varathaiyangar Palayam PO, Coimbatore, Tamil Nadu 641049</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-apex-red flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <a href={PHONE_HREF} className="hover:text-apex-red transition-colors">{PHONE_NUMBER}</a>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs uppercase tracking-widest text-apex-muted/40">
-            © 2026 Apex Karting India. Engineered for Velocity.
+            © 2026 Apex Karting Arena, Coimbatore. Engineered for Velocity.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-apex-muted/40 hover:text-apex-red text-xs uppercase tracking-widest transition-colors">Privacy Policy</a>

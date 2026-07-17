@@ -7,7 +7,7 @@ const TESTIMONIALS = [
     title: 'Professional Drifter',
     initials: 'RK',
     rating: 5,
-    text: '"The best indoor track in India hands down. The grip levels and the atmosphere are insane!"',
+    text: '"The best outdoor track in Coimbatore hands down. The grip levels and the atmosphere are insane!"',
   },
   {
     name: 'Ananya Sharma',

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X, Zap, Phone } from 'lucide-react'
+import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/experiences', label: 'Experiences' },
   { to: '/about', label: 'About' },
-  { to: '/booking', label: 'Booking' },
 ]
 
 export default function Navbar() {
@@ -37,7 +37,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2 group">
           <Zap className="w-6 h-6 text-apex-red group-hover:text-apex-red-light transition-colors" />
           <span className="text-2xl font-display font-black tracking-tighter text-white uppercase">
-            APEX KARTING
+APEX KARTING ARENA
           </span>
         </Link>
 
@@ -58,13 +58,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Book Now CTA */}
-        <Link
-          to="/booking"
+        {/* Call CTA */}
+        <a
+          href={PHONE_HREF}
           className="hidden md:flex items-center gap-2 bg-apex-red text-white px-6 py-2.5 rounded-md font-display uppercase tracking-widest text-sm animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
         >
-          Book Now
-        </Link>
+          <Phone className="w-4 h-4" />
+          {PHONE_NUMBER}
+        </a>
 
         {/* Mobile Toggle */}
         <button
@@ -91,12 +92,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/booking"
-              className="bg-apex-red text-white px-6 py-3 rounded-md font-display uppercase tracking-widest text-sm text-center mt-2 cursor-pointer"
+            <a
+              href={PHONE_HREF}
+              className="flex items-center justify-center gap-2 bg-apex-red text-white px-6 py-3 rounded-md font-display uppercase tracking-widest text-sm text-center mt-2 cursor-pointer"
             >
-              Book Now
-            </Link>
+              <Phone className="w-4 h-4" />
+              {PHONE_NUMBER}
+            </a>
           </div>
         </div>
       )}

@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronRight, Gauge, Route, Timer, Flag } from 'lucide-react'
+import { ChevronRight, Gauge, Route, Flag } from 'lucide-react'
 import SpeedLines from './SpeedLines'
+import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 const STATS = [
   { icon: Gauge, value: '60 KM/H', label: 'Top Speed' },
-  { icon: Route, value: '800M', label: 'Pro Track' },
-  { icon: Timer, value: '42.3S', label: 'Lap Record' },
+  { icon: Route, value: '550M', label: 'Pro Track' },
 ]
 
 export default function ParticleHero({ particleCount = 20 }) {
@@ -196,7 +196,7 @@ export default function ParticleHero({ particleCount = 20 }) {
           <div className="mb-6">
             <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/[0.04] backdrop-blur-md rounded-full text-sm text-apex-gold uppercase tracking-[0.25em] font-body border border-apex-gold/10">
               <Flag className="w-3.5 h-3.5" />
-              India's Premier Indoor Karting
+Coimbatore's Premier Outdoor Karting
             </span>
           </div>
 
@@ -220,7 +220,7 @@ export default function ParticleHero({ particleCount = 20 }) {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-neutral-400 font-body max-w-2xl mx-auto leading-relaxed mb-14">
-            Experience the rush of professional indoor karting on India's most advanced racing circuit.
+            Experience the rush of professional outdoor karting on Coimbatore's most advanced racing circuit.
             Challenge your limits. Beat the clock. Own the podium.
           </p>
 
@@ -244,16 +244,16 @@ export default function ParticleHero({ particleCount = 20 }) {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/booking"
+            <a
+              href={PHONE_HREF}
               className="group relative px-12 py-5 bg-apex-red hover:bg-apex-red-light text-white font-display text-lg tracking-wider uppercase transition-all duration-300 overflow-hidden box-glow-red cursor-pointer active:scale-95"
             >
               <span className="relative z-10 flex items-center gap-2">
-                BOOK YOUR RACE
+                CALL {PHONE_NUMBER}
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            </Link>
+            </a>
 
             <Link
               to="/experiences"

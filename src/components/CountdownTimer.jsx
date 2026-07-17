@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 
+const LAUNCH_DATE = new Date(2026, 6, 18, 10, 0, 0)
+
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 })
+  const [isPreLaunch, setIsPreLaunch] = useState(true)
 
   useEffect(() => {
     function getNextRaceTime() {
@@ -19,8 +22,11 @@ export default function CountdownTimer() {
     }
 
     const timer = setInterval(() => {
-      const next = getNextRaceTime()
-      const diff = next - new Date()
+      const now = new Date()
+      const preLaunch = now < LAUNCH_DATE
+      setIsPreLaunch(preLaunch)
+      const next = preLaunch ? LAUNCH_DATE : getNextRaceTime()
+      const diff = next - now
       setTimeLeft({
         hours: Math.floor(diff / 3600000),
         minutes: Math.floor((diff % 3600000) / 60000),
@@ -37,7 +43,7 @@ export default function CountdownTimer() {
     <section className="py-20 bg-apex-surface border-y border-white/5">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <p className="font-body text-apex-red uppercase tracking-[0.3em] text-sm font-bold mb-4">
-          Next Race Starts In
+          {isPreLaunch ? 'Grand Opening Starts In' : 'Next Race Starts In'}
         </p>
         <div className="flex justify-center gap-4 md:gap-8">
           {[
