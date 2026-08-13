@@ -7,26 +7,26 @@ import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 const EXPERIENCES = [
   {
-    title: 'Junior Racers',
-    tagline: 'Ages 7-12',
-    desc: 'Safe, fun, and fast-paced entry into racing. Perfect for young champions starting their journey.',
-    duration: '10 MIN',
-    speed: '30 KM/H',
-    icon: Baby,
-    gradient: 'from-green-500/20 via-emerald-600/10 to-transparent',
-    borderColor: 'border-green-500/30',
-    hoverBorder: 'hover:border-green-400/60',
-    iconBg: 'bg-green-500/10',
-    iconColor: 'text-green-400',
-    accentColor: 'text-green-400',
+    title: 'Level 1',
+    tagline: '200cc · Ages 16+',
+    desc: 'A perfect starting point — full-power karts built for control and confidence on your first laps.',
+    duration: '5 MIN',
+    cc: '200CC',
+    icon: Flag,
+    gradient: 'from-red-500/20 via-red-600/10 to-transparent',
+    borderColor: 'border-apex-red/30',
+    hoverBorder: 'hover:border-apex-red/60',
+    iconBg: 'bg-apex-red/10',
+    iconColor: 'text-apex-red',
+    accentColor: 'text-apex-red',
   },
   {
-    title: 'Grand Prix',
-    tagline: 'Ages 13+',
-    desc: 'Our flagship experience. Full heat, qualifying rounds, and podium finish. The real deal.',
-    duration: '15 MIN',
-    speed: '50 KM/H',
-    icon: Flag,
+    title: 'Level 2',
+    tagline: '270cc · Ages 16+',
+    desc: 'Our flagship experience — more power, more track time, for racers ready to push harder.',
+    duration: '10 MIN',
+    cc: '270CC',
+    icon: Flame,
     featured: true,
     gradient: 'from-amber-500/20 via-amber-600/10 to-transparent',
     borderColor: 'border-apex-gold/40',
@@ -34,20 +34,6 @@ const EXPERIENCES = [
     iconBg: 'bg-apex-gold/10',
     iconColor: 'text-apex-gold',
     accentColor: 'text-apex-gold',
-  },
-  {
-    title: 'Pro Circuit',
-    tagline: 'Ages 18+',
-    desc: 'For the elite. High-torque karts, aggressive lines, and championship-grade telemetry.',
-    duration: '20 MIN',
-    speed: '60 KM/H',
-    icon: Flame,
-    gradient: 'from-red-500/20 via-red-600/10 to-transparent',
-    borderColor: 'border-apex-red/30',
-    hoverBorder: 'hover:border-apex-red/60',
-    iconBg: 'bg-apex-red/10',
-    iconColor: 'text-apex-red',
-    accentColor: 'text-apex-red',
   },
 ]
 
@@ -119,13 +105,31 @@ export default function Home() {
                       </div>
                       <div className="flex items-center gap-2">
                         <Gauge className="w-3.5 h-3.5 text-apex-muted" />
-                        <span className="text-xs text-apex-muted font-body">{exp.speed}</span>
+                        <span className="text-xs text-apex-muted font-body">{exp.cc}</span>
                       </div>
                     </div>
                   </div>
                 </div>
               )
             })}
+
+            {/* Kids Karts - Coming Soon */}
+            <div className="group relative bg-apex-surface rounded-xl border border-dashed border-white/20 transition-all duration-500 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none" />
+              <div className="absolute top-4 right-4 z-10 bg-white/10 text-apex-muted font-bold text-[10px] tracking-widest px-3 py-1 uppercase rounded-full font-body">
+                Coming Soon
+              </div>
+              <div className="relative p-8 pt-10">
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+                  <Baby className="w-7 h-7 text-apex-muted" />
+                </div>
+                <div className="mb-4">
+                  <h3 className="font-display text-2xl text-white uppercase mb-1">Kids Karts</h3>
+                  <span className="text-xs font-body uppercase tracking-widest text-apex-gold">Launching September 18, 2026</span>
+                </div>
+                <p className="text-apex-muted text-sm font-body leading-relaxed">Smaller karts built for our youngest racers. Stay tuned.</p>
+              </div>
+            </div>
           </div>
 
           {/* View all link */}
