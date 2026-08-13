@@ -49,3 +49,8 @@ Applies to the same two tier grids (Experiences page `TIERS` render, Homepage `E
 - No changes to Navbar, Footer, hero banner, or CountdownTimer — kids-karts messaging is scoped to the two tier grids only, per explicit choice.
 - No real kart photography — placeholder images stay until the user provides real ones.
 - No top-speed figures for Level 1/Level 2 — not provided, not fabricated.
+
+## Post-implementation notes (added after final review)
+
+- The track diagram never included a literal "START/FINISH" graphic element, before or after this redesign — only the "Apex-OS Telemetry v4.2.1 // ACTIVE" HUD label in the corner. Section 1's phrase "keep the START/FINISH concept" refers to that HUD label, not a separate visual marker.
+- Section 2 described tier feature bullet lists as "trimmed to what's actually true." In the actual implementation, feature bullet lists were dropped entirely from both tier cards (no bullets are rendered) rather than trimmed to a shorter list.

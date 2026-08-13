@@ -1,55 +1,38 @@
-import { ChevronRight, Users, Timer, Gauge, Trophy, Baby, Shield } from 'lucide-react'
+import { ChevronRight, Users, Timer, Gauge, Baby } from 'lucide-react'
 import { PHONE_NUMBER, PHONE_HREF } from '../constants'
 
 const TIERS = [
   {
-    name: 'Junior Racers',
-    tagline: 'Safety First',
-    desc: 'Perfect for young champions starting their racing journey.',
-    age: '7-12 years',
-    duration: '10 Minutes Session',
-    speed: 'Top Speed: 30 KM/H',
-    borderColor: 'border-green-500/50',
-    tagColor: 'text-green-400',
-    icon: Baby,
-    features: ['6.5 HP Karts', 'Dedicated junior track', 'Professional supervision', 'Safety gear included'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDdPv_rrT09DoQiLcYO6gA3c_ZfuDw600lnkJXZccnGHzc0A2g7sdujwmvHkHyy2IXWIQ6lDabrPQ5dsjbwEu4hR3lp0NeYLiLNZ62QaIMSPvJVrg-bCg8qtXCvshbdqZ8GFCA32q_2bfO5x7U-FNFa4FIQdr6hfy00pzPym1QpFAI8g6pUC3yM0oErqb78y6h-Tm92CLW7hTYcLaxPISjXggIpNUlKVL21Qn1XbOIQyksLr-hQODJnPkioMUK2k9IzoTxUFqso_Is',
-  },
-  {
-    name: 'Grand Prix',
-    tagline: 'The Main Event',
-    desc: 'Unleash your inner pro on our flagship high-performance fleet.',
-    age: '13+ years',
-    duration: '15 Minutes Session',
-    speed: 'Top Speed: 50 KM/H',
-    featured: true,
-    borderColor: 'border-apex-gold',
-    tagColor: 'text-apex-gold',
-    icon: Trophy,
-    features: ['9 HP Sodi Karts', 'Full telemetry reporting', 'Qualifying rounds', 'Podium ceremony'],
+    name: 'Level 1',
+    tagline: '200cc',
+    desc: 'A perfect starting point — full-power karts built for control and confidence on your first laps.',
+    age: '16+ years',
+    duration: '5 Minute Session',
+    cc: '200cc Engine',
+    borderColor: 'border-apex-red/50',
+    tagColor: 'text-apex-red',
+    // Placeholder photo — swap for the real Level 1 kart photo when available.
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0zcK4n62F2TqYofkJgJYF3gX4zpsI_2txIeXimWgBxjj1ohbFQgsdURq3j9SdlNijAytoh6ob2I-bOPwpNu3cT8CRkgjYrFATdIp4zSDfVf7zOXBpkWQJ8U5dgBQ-U-7Z9YJLR2Dous9U6-0ZDsE4MMplB4o38M0HHTZ5HFXnlEkfoexNsDkTkDuOKcfl0P3HwiTn-7TGA2acHnimu61RKmAxIict3q5o19qKBGiRnhRmuU7kWA2ro1IgE7FUFf-I1jMsppYP3_A',
   },
   {
-    name: 'Pro Circuit',
-    tagline: 'Expert Tier',
-    desc: 'Raw speed for those who have mastered the racing line.',
-    age: '18+ (Exp Required)',
-    duration: '20 Minutes Session',
-    speed: 'Top Speed: 60 KM/H',
-    borderColor: 'border-apex-red/50',
-    tagColor: 'text-apex-red',
-    icon: Shield,
-    features: ['13 HP Karts', 'Advanced telemetry', 'Competitive league eligible', 'Championship points'],
+    name: 'Level 2',
+    tagline: '270cc',
+    desc: 'Our flagship experience — more power, more track time, for racers ready to push harder.',
+    age: '16+ years',
+    duration: '10 Minute Session',
+    cc: '270cc Engine',
+    featured: true,
+    borderColor: 'border-apex-gold',
+    tagColor: 'text-apex-gold',
+    // Placeholder photo — swap for the real Level 2 kart photo when available.
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA9vaN-XGLlqTPJWLgkr-g66hZptlvt31RPUM8Q5DNZOcsdoqOXwuwNdoaQXn1OkCLpVb3cy6lmGGBD27iClPF-u6UAx_yfbkLc8xZq4xdUPEnv3O3s2UwSt7N0byPWwWYFeXzn5q-X2VVeV_IFp5mYqEp6qtcQVwfODCHYBObn4NXeiLdG33ietIEsqZ7qHE10-29z4FRhaU463NAzPHIVRKK0kQ8WoZOwGYC0UsLScUiTxj0luOA9PWK1-L4Df0zdWBYK3wgey3M',
   },
 ]
 
 const COMPARISON = [
-  { feature: 'Age Requirement', junior: '7-12', grandPrix: '13+', pro: '18+' },
-  { feature: 'Session Duration', junior: '10 min', grandPrix: '15 min', pro: '20 min' },
-  { feature: 'Top Speed', junior: '30 km/h', grandPrix: '50 km/h', pro: '60 km/h' },
-  { feature: 'Kart Power', junior: '6.5 HP', grandPrix: '9 HP', pro: '13 HP' },
-  { feature: 'Telemetry', junior: 'Basic', grandPrix: 'Full', pro: 'Advanced' },
+  { feature: 'Age Requirement', level1: '16+', level2: '16+' },
+  { feature: 'Session Duration', level1: '5 min', level2: '10 min' },
+  { feature: 'Engine Displacement', level1: '200cc', level2: '270cc' },
 ]
 
 export default function Experiences() {
@@ -75,7 +58,7 @@ export default function Experiences() {
             OUR EXPERIENCES
           </h1>
           <p className="max-w-xl mx-auto text-apex-muted font-body text-lg leading-relaxed">
-            From professional telemetry for pro racers to safe circuits for rising stars. Choose your intensity.
+            From professional telemetry for pro racers to a perfect entry point for first-timers. Choose your intensity.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-apex-red to-transparent opacity-50" />
@@ -87,43 +70,59 @@ export default function Experiences() {
           {TIERS.map((tier) => (
             <div
               key={tier.name}
-              className={`bg-apex-surface rounded-lg p-8 border-t-4 ${tier.borderColor} hover:bg-apex-surface-light transition-all duration-500 flex flex-col h-full ${
-                tier.featured ? 'lg:p-10 transform lg:scale-105 z-10 shadow-[0_0_40px_rgba(245,158,11,0.1)] relative' : ''
+              className={`bg-apex-surface rounded-lg overflow-hidden border-t-4 ${tier.borderColor} hover:bg-apex-surface-light transition-all duration-500 flex flex-col h-full ${
+                tier.featured ? 'lg:scale-105 z-10 shadow-[0_0_40px_rgba(245,158,11,0.1)] relative' : ''
               }`}
             >
               {tier.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-apex-gold text-black font-body text-[10px] font-black px-4 py-1 uppercase tracking-widest rounded-full">
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-apex-gold text-black font-body text-[10px] font-black px-4 py-1 uppercase tracking-widest rounded-full z-10">
                   MOST POPULAR
                 </div>
               )}
-              <div className="mb-6">
-                <span className={`${tier.tagColor} font-body text-[10px] tracking-widest uppercase`}>{tier.tagline}</span>
-                <h3 className={`font-display ${tier.featured ? 'text-4xl' : 'text-3xl'} text-white mt-2 mb-4`}>
-                  {tier.name.toUpperCase()}
-                </h3>
-                <p className="text-apex-muted text-sm mb-8">{tier.desc}</p>
-              </div>
+              <img src={tier.image} alt={`${tier.name} kart`} className="w-full h-40 object-cover" />
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="mb-6">
+                  <span className={`${tier.tagColor} font-body text-[10px] tracking-widest uppercase`}>{tier.tagline}</span>
+                  <h3 className={`font-display ${tier.featured ? 'text-4xl' : 'text-3xl'} text-white mt-2 mb-4`}>
+                    {tier.name.toUpperCase()}
+                  </h3>
+                  <p className="text-apex-muted text-sm mb-8">{tier.desc}</p>
+                </div>
 
-              <div className="space-y-4 mb-10 flex-grow">
-                <div className="flex items-center gap-3">
-                  <Users className="w-4 h-4 text-apex-gold" />
-                  <span className="font-body text-sm">{tier.age}</span>
+                <div className="space-y-4 mb-10 flex-grow">
+                  <div className="flex items-center gap-3">
+                    <Users className="w-4 h-4 text-apex-gold" />
+                    <span className="font-body text-sm">{tier.age}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Timer className="w-4 h-4 text-apex-gold" />
+                    <span className="font-body text-sm">{tier.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Gauge className="w-4 h-4 text-apex-gold" />
+                    <span className="font-body text-sm">{tier.cc}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Timer className="w-4 h-4 text-apex-gold" />
-                  <span className="font-body text-sm">{tier.duration}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Gauge className="w-4 h-4 text-apex-gold" />
-                  <span className="font-body text-sm">{tier.speed}</span>
-                </div>
-              </div>
 
-              <div className="mt-auto pt-6 border-t border-white/5 text-center">
-                <span className="text-apex-muted text-xs uppercase tracking-widest font-body">Walk-ins Welcome</span>
+                <div className="mt-auto pt-6 border-t border-white/5 text-center">
+                  <span className="text-apex-muted text-xs uppercase tracking-widest font-body">Walk-ins Welcome</span>
+                </div>
               </div>
             </div>
           ))}
+
+          {/* Kids Karts - Coming Soon */}
+          <div className="bg-apex-surface rounded-lg overflow-hidden border-t-4 border-dashed border-white/20 hover:bg-apex-surface-light transition-all duration-500 flex flex-col h-full">
+            <div className="p-8 flex flex-col flex-grow items-center text-center justify-center">
+              <Baby className="w-10 h-10 text-apex-muted mb-4" />
+              <span className="bg-white/10 text-apex-muted font-body text-[10px] font-black px-4 py-1 uppercase tracking-widest rounded-full mb-4">
+                COMING SOON
+              </span>
+              <h3 className="font-display text-3xl text-white mb-3">KIDS KARTS</h3>
+              <p className="text-apex-gold text-sm font-body uppercase tracking-widest mb-3">Launching September 18, 2026</p>
+              <p className="text-apex-muted text-sm">Smaller karts built for our youngest racers.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -138,18 +137,16 @@ export default function Experiences() {
             <thead>
               <tr className="border-b border-apex-border">
                 <th className="py-4 pr-8 font-body text-xs uppercase tracking-widest text-apex-muted">Feature</th>
-                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-green-400">Junior</th>
-                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-gold">Grand Prix</th>
-                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-red">Pro Circuit</th>
+                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-red">Level 1</th>
+                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-gold">Level 2</th>
               </tr>
             </thead>
             <tbody>
               {COMPARISON.map((row) => (
                 <tr key={row.feature} className="border-b border-apex-border/30">
                   <td className="py-4 pr-8 text-sm text-apex-muted">{row.feature}</td>
-                  <td className="py-4 px-4 text-sm font-bold">{row.junior}</td>
-                  <td className="py-4 px-4 text-sm font-bold text-apex-gold">{row.grandPrix}</td>
-                  <td className="py-4 px-4 text-sm font-bold">{row.pro}</td>
+                  <td className="py-4 px-4 text-sm font-bold">{row.level1}</td>
+                  <td className="py-4 px-4 text-sm font-bold text-apex-gold">{row.level2}</td>
                 </tr>
               ))}
             </tbody>

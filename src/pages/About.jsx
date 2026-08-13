@@ -51,7 +51,7 @@ export default function About() {
                 MASTER THE <br /><span className="text-apex-gold">APEX LINE</span>
               </h2>
               <p className="text-apex-muted leading-relaxed">
-                Our 550m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 4 sweeper to the technical Turn 7 hairpin, every meter is a battle for the podium.
+                Our 550m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 7 sweeper to the technical Turn 4 hairpin, every meter is a battle for the podium.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-apex-surface-high border-l-2 border-apex-red">
@@ -73,12 +73,12 @@ export default function About() {
                 style={{ backgroundImage: 'radial-gradient(#444 1px, transparent 1px)', backgroundSize: '30px 30px' }}
               />
               <svg className="w-full h-full max-h-[500px]" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 350C100 350 50 300 50 200C50 100 150 50 300 50C450 50 500 150 550 150C600 150 750 100 750 200C750 300 650 400 400 400C250 400 200 350 100 350Z" stroke="#E11D48" strokeWidth="24" strokeLinecap="round" className="opacity-30" />
-                <path d="M100 350C100 350 50 300 50 200C50 100 150 50 300 50C450 50 500 150 550 150C600 150 750 100 750 200C750 300 650 400 400 400C250 400 200 350 100 350Z" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" className="neon-glow-red" />
-                <path d="M110 340C110 340 70 290 70 200C70 110 160 70 300 70C440 70 490 160 540 160C590 160 730 110 730 200C730 290 640 380 400 380C260 380 210 340 110 340Z" stroke="#F59E0B" strokeWidth="2" strokeDasharray="8 8" className="racing-line" />
+                <path id="trackPath" d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#E11D48" strokeWidth="24" strokeLinecap="round" className="opacity-30" />
+                <path d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" className="neon-glow-red" />
+                <path d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#F59E0B" strokeWidth="2" strokeDasharray="8 8" className="racing-line" />
                 {[
-                  [80, 300], [100, 100], [300, 50], [550, 150],
-                  [750, 180], [650, 350], [400, 400], [200, 350],
+                  [40, 280], [130, 110], [380, 110], [340, 200],
+                  [300, 290], [400, 260], [620, 140], [750, 250],
                 ].map(([cx, cy], i) => (
                   <g key={i}>
                     <circle cx={cx} cy={cy} r="14" fill="#F59E0B" />
@@ -87,6 +87,11 @@ export default function About() {
                     </text>
                   </g>
                 ))}
+                <circle r="7" fill="#F59E0B" className="drop-shadow-[0_0_8px_rgba(245,158,11,0.9)]">
+                  <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#trackPath" />
+                  </animateMotion>
+                </circle>
               </svg>
               <div className="absolute bottom-4 right-4 text-[10px] text-apex-muted font-mono uppercase tracking-widest">
                 Apex-OS Telemetry v4.2.1 // ACTIVE
