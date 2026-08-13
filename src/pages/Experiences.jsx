@@ -58,7 +58,7 @@ export default function Experiences() {
             OUR EXPERIENCES
           </h1>
           <p className="max-w-xl mx-auto text-apex-muted font-body text-lg leading-relaxed">
-            From professional telemetry for pro racers to safe circuits for rising stars. Choose your intensity.
+            From professional telemetry for pro racers to a perfect entry point for first-timers. Choose your intensity.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-apex-red to-transparent opacity-50" />
@@ -112,7 +112,7 @@ export default function Experiences() {
           ))}
 
           {/* Kids Karts - Coming Soon */}
-          <div className="bg-apex-surface rounded-lg overflow-hidden border-t-4 border-dashed border-white/20 flex flex-col h-full">
+          <div className="bg-apex-surface rounded-lg overflow-hidden border-t-4 border-dashed border-white/20 hover:bg-apex-surface-light transition-all duration-500 flex flex-col h-full">
             <div className="p-8 flex flex-col flex-grow items-center text-center justify-center">
               <Baby className="w-10 h-10 text-apex-muted mb-4" />
               <span className="bg-white/10 text-apex-muted font-body text-[10px] font-black px-4 py-1 uppercase tracking-widest rounded-full mb-4">

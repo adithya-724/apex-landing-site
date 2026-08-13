@@ -114,7 +114,7 @@ export default function Home() {
             })}
 
             {/* Kids Karts - Coming Soon */}
-            <div className="group relative bg-apex-surface rounded-xl border border-dashed border-white/20 transition-all duration-500 overflow-hidden">
+            <div className="relative bg-apex-surface rounded-xl border border-dashed border-white/20 transition-all duration-500 overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none" />
               <div className="absolute top-4 right-4 z-10 bg-white/10 text-apex-muted font-bold text-[10px] tracking-widest px-3 py-1 uppercase rounded-full font-body">
                 Coming Soon

@@ -51,7 +51,7 @@ export default function About() {
                 MASTER THE <br /><span className="text-apex-gold">APEX LINE</span>
               </h2>
               <p className="text-apex-muted leading-relaxed">
-                Our 550m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 4 sweeper to the technical Turn 7 hairpin, every meter is a battle for the podium.
+                Our 550m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 7 sweeper to the technical Turn 4 hairpin, every meter is a battle for the podium.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-apex-surface-high border-l-2 border-apex-red">
@@ -75,7 +75,7 @@ export default function About() {
               <svg className="w-full h-full max-h-[500px]" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="trackPath" d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#E11D48" strokeWidth="24" strokeLinecap="round" className="opacity-30" />
                 <path d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" className="neon-glow-red" />
-                <path d="M115,360 C85,360 65,335 65,280 C65,215 85,160 140,130 C215,95 305,95 365,125 C395,145 380,175 335,190 C295,205 280,235 305,260 C330,285 360,270 375,245 C405,205 470,165 610,165 C670,165 715,195 715,250 C715,310 660,360 575,360 L115,360 Z" stroke="#F59E0B" strokeWidth="2" strokeDasharray="8 8" className="racing-line" />
+                <path d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#F59E0B" strokeWidth="2" strokeDasharray="8 8" className="racing-line" />
                 {[
                   [40, 280], [130, 110], [380, 110], [340, 200],
                   [300, 290], [400, 260], [620, 140], [750, 250],
