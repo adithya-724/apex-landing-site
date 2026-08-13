@@ -24,12 +24,17 @@ export default function ParticleHero({ particleCount = 20 }) {
   const rows = particleCount
   const totalParticles = rows * rows
   const [spacing, setSpacing] = useState(1.4)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const updateSpacing = () => setSpacing(window.innerWidth < 640 ? 0.85 : 1.4)
-    updateSpacing()
-    window.addEventListener('resize', updateSpacing)
-    return () => window.removeEventListener('resize', updateSpacing)
+    const updateLayout = () => {
+      const mobile = window.innerWidth < 640
+      setSpacing(mobile ? 0.85 : 1.4)
+      setIsMobile(mobile)
+    }
+    updateLayout()
+    window.addEventListener('resize', updateLayout)
+    return () => window.removeEventListener('resize', updateLayout)
   }, [])
 
   useEffect(() => {
@@ -37,6 +42,8 @@ export default function ParticleHero({ particleCount = 20 }) {
     if (!container) return
     container.innerHTML = ''
     particlesRef.current = []
+
+    if (isMobile) return
 
     for (let i = 0; i < totalParticles; i++) {
       const particle = document.createElement('div')
@@ -76,7 +83,7 @@ export default function ParticleHero({ particleCount = 20 }) {
       container.appendChild(particle)
       particlesRef.current.push(particle)
     }
-  }, [rows, totalParticles, spacing])
+  }, [rows, totalParticles, spacing, isMobile])
 
   useEffect(() => {
     const animate = () => {
@@ -123,6 +130,7 @@ export default function ParticleHero({ particleCount = 20 }) {
   }, [cursor, rows])
 
   const handlePointerMove = (e) => {
+    if (isMobile) return
     const event = e.touches ? e.touches[0] : e
     const newCursor = {
       x: (event.clientX - window.innerWidth / 2) * 0.7,
@@ -175,7 +183,7 @@ export default function ParticleHero({ particleCount = 20 }) {
       <SpeedLines color="#E11D48" count={25} className="opacity-[0.08]" />
 
       {/* Particle Grid */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 hidden sm:flex items-center justify-center">
         <div
           ref={containerRef}
           className="relative"
@@ -272,7 +280,7 @@ export default function ParticleHero({ particleCount = 20 }) {
           </div>
 
           {/* Interactive hint */}
-          <div className="mt-20 flex items-center justify-center gap-4 text-white/15 text-[10px] uppercase tracking-[0.3em] font-body">
+          <div className="mt-20 hidden sm:flex items-center justify-center gap-4 text-white/15 text-[10px] uppercase tracking-[0.3em] font-body">
             <div className="w-10 h-px bg-gradient-to-r from-transparent to-white/15" />
             <span className="animate-pulse">Move cursor to interact</span>
             <div className="w-10 h-px bg-gradient-to-l from-transparent to-white/15" />
