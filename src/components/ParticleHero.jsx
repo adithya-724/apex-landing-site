@@ -166,7 +166,7 @@ export default function ParticleHero({ particleCount = 20 }) {
       />
 
       {/* Massive radial glow behind particles */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] sm:w-[600px] sm:h-[600px] lg:w-[900px] lg:h-[900px] pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[78vw] h-[78vw] max-w-[420px] max-h-[420px] sm:w-[600px] sm:h-[600px] lg:w-[900px] lg:h-[900px] pointer-events-none">
         <div className="absolute inset-0 rounded-full bg-gradient-to-b from-red-600/15 via-red-900/10 to-transparent blur-3xl" />
         <div className="absolute inset-[15%] rounded-full bg-gradient-to-b from-amber-500/10 via-transparent to-transparent blur-2xl" />
       </div>
@@ -202,14 +202,14 @@ export default function ParticleHero({ particleCount = 20 }) {
         <div className="text-center max-w-5xl mx-auto mt-8">
           {/* Tagline pill */}
           <div className="mb-6">
-            <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/[0.04] backdrop-blur-md rounded-full text-sm text-apex-gold uppercase tracking-[0.25em] font-body border border-apex-gold/10">
-              <Flag className="w-3.5 h-3.5" />
-Coimbatore's Premier Outdoor Karting
+            <span className="inline-flex items-center gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 bg-white/[0.04] backdrop-blur-md rounded-full text-[10px] sm:text-sm text-apex-gold uppercase tracking-[0.15em] sm:tracking-[0.25em] font-body border border-apex-gold/10">
+              <Flag className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+              Coimbatore's Premier Outdoor Karting
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl sm:text-7xl md:text-[9rem] lg:text-[12rem] font-display font-black tracking-tighter leading-[0.85] mb-4">
+          <h1 className="text-6xl sm:text-7xl md:text-[9rem] lg:text-[12rem] font-display font-black tracking-tighter leading-[0.85] mb-4">
             <span className="bg-gradient-to-b from-white via-red-200 to-red-600 bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 0 40px rgba(225,29,72,0.3))' }}>
               FEEL THE
             </span>
