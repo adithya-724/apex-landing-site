@@ -51,7 +51,7 @@ export default function About() {
                 MASTER THE <br /><span className="text-apex-gold">APEX LINE</span>
               </h2>
               <p className="text-apex-muted leading-relaxed">
-                Our 550m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 7 sweeper to the technical Turn 4 hairpin, every meter is a battle for the podium.
+                Our 550m professional circuit features 8 demanding turns designed to test technical skill and raw courage. From the high-speed Turn 2 sweeper to the technical Turn 5 hairpin, every meter is a battle for the podium.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-apex-surface-high border-l-2 border-apex-red">
@@ -72,23 +72,23 @@ export default function About() {
               <div className="absolute inset-0 opacity-10 pointer-events-none"
                 style={{ backgroundImage: 'radial-gradient(#444 1px, transparent 1px)', backgroundSize: '30px 30px' }}
               />
-              <svg className="w-full h-full max-h-[500px]" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="trackPath" d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#E11D48" strokeWidth="24" strokeLinecap="round" className="opacity-30" />
-                <path d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" className="neon-glow-red" />
-                <path d="M100,380 C60,380 40,340 40,280 C40,200 60,140 130,110 C220,70 320,70 380,110 C420,135 400,180 340,200 C280,220 260,260 300,290 C340,320 380,300 400,260 C440,200 520,140 620,140 C700,140 750,180 750,250 C750,330 680,380 580,380 L100,380 Z" stroke="#F59E0B" strokeWidth="2" strokeDasharray="8 8" className="racing-line" />
+              <svg className="w-full h-full max-h-[500px]" viewBox="0 0 580 441" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="trackPath" d="M 205,390 L 500,390 C 522,390 536,376 536,355 C 536,333 521,307 496,307 L 251,307 C 238,307 230,296 230,281 L 230,126 C 230,108 241,96 258,96 L 366,96 C 382,96 391,107 391,121 C 391,135 381,145 366,151 L 322,168 C 306,174 298,185 298,198 C 298,213 309,225 325,230 C 339,234 354,239 371,241 L 440,241 C 458,241 470,231 476,214 L 505,113 C 512,94 510,81 499,70 C 489,60 476,57 461,55 C 444,53 432,47 422,38 C 414,31 404,28 391,28 L 103,28 C 82,28 72,42 72,64 L 72,278 C 72,297 65,310 51,321 C 36,332 27,345 27,360 C 27,379 41,390 61,390 L 205,390" stroke="#E11D48" strokeWidth="18" strokeLinecap="round" strokeLinejoin="round" className="opacity-30" />
+                <path d="M 205,390 L 500,390 C 522,390 536,376 536,355 C 536,333 521,307 496,307 L 251,307 C 238,307 230,296 230,281 L 230,126 C 230,108 241,96 258,96 L 366,96 C 382,96 391,107 391,121 C 391,135 381,145 366,151 L 322,168 C 306,174 298,185 298,198 C 298,213 309,225 325,230 C 339,234 354,239 371,241 L 440,241 C 458,241 470,231 476,214 L 505,113 C 512,94 510,81 499,70 C 489,60 476,57 461,55 C 444,53 432,47 422,38 C 414,31 404,28 391,28 L 103,28 C 82,28 72,42 72,64 L 72,278 C 72,297 65,310 51,321 C 36,332 27,345 27,360 C 27,379 41,390 61,390 L 205,390" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="neon-glow-red" />
+                <path d="M 205,390 L 500,390 C 522,390 536,376 536,355 C 536,333 521,307 496,307 L 251,307 C 238,307 230,296 230,281 L 230,126 C 230,108 241,96 258,96 L 366,96 C 382,96 391,107 391,121 C 391,135 381,145 366,151 L 322,168 C 306,174 298,185 298,198 C 298,213 309,225 325,230 C 339,234 354,239 371,241 L 440,241 C 458,241 470,231 476,214 L 505,113 C 512,94 510,81 499,70 C 489,60 476,57 461,55 C 444,53 432,47 422,38 C 414,31 404,28 391,28 L 103,28 C 82,28 72,42 72,64 L 72,278 C 72,297 65,310 51,321 C 36,332 27,345 27,360 C 27,379 41,390 61,390 L 205,390" stroke="#F59E0B" strokeWidth="1.5" strokeDasharray="7 7" strokeLinejoin="round" className="racing-line" />
                 {[
-                  [40, 280], [130, 110], [380, 110], [340, 200],
-                  [300, 290], [400, 260], [620, 140], [750, 250],
+                  [27, 360], [72, 64], [499, 70], [476, 214],
+                  [298, 198], [391, 121], [230, 281], [496, 307],
                 ].map(([cx, cy], i) => (
                   <g key={i}>
-                    <circle cx={cx} cy={cy} r="14" fill="#F59E0B" />
-                    <text x={cx} y={cy + 5} textAnchor="middle" fill="black" fontSize="12" fontFamily="Russo One">
+                    <circle cx={cx} cy={cy} r="10" fill="#F59E0B" />
+                    <text x={cx} y={cy + 4} textAnchor="middle" fill="black" fontSize="9" fontFamily="Russo One">
                       {i + 1}
                     </text>
                   </g>
                 ))}
-                <circle r="7" fill="#F59E0B" className="drop-shadow-[0_0_8px_rgba(245,158,11,0.9)]">
-                  <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
+                <circle r="6" fill="#F59E0B" className="drop-shadow-[0_0_8px_rgba(245,158,11,0.9)]">
+                  <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="1;0" keyTimes="0;1">
                     <mpath href="#trackPath" />
                   </animateMotion>
                 </circle>
@@ -164,7 +164,7 @@ export default function About() {
           <p className="text-apex-muted mb-8">Walk in and feel the rush of professional outdoor karting.</p>
           <a
             href={PHONE_HREF}
-            className="inline-flex items-center gap-2 bg-apex-red text-white px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 bg-apex-red text-white px-6 sm:px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
           >
             CALL {PHONE_NUMBER} <ChevronRight className="w-5 h-5" />
           </a>

@@ -10,23 +10,9 @@ const EXPERIENCES = [
     title: 'Level 1',
     tagline: '200cc · Ages 16+',
     desc: 'A perfect starting point — full-power karts built for control and confidence on your first laps.',
-    duration: '5 MIN',
+    duration: '5-10 MIN',
     cc: '200CC',
     icon: Flag,
-    gradient: 'from-red-500/20 via-red-600/10 to-transparent',
-    borderColor: 'border-apex-red/30',
-    hoverBorder: 'hover:border-apex-red/60',
-    iconBg: 'bg-apex-red/10',
-    iconColor: 'text-apex-red',
-    accentColor: 'text-apex-red',
-  },
-  {
-    title: 'Level 2',
-    tagline: '270cc · Ages 16+',
-    desc: 'Our flagship experience — more power, more track time, for racers ready to push harder.',
-    duration: '10 MIN',
-    cc: '270CC',
-    icon: Flame,
     featured: true,
     gradient: 'from-amber-500/20 via-amber-600/10 to-transparent',
     borderColor: 'border-apex-gold/40',
@@ -34,6 +20,20 @@ const EXPERIENCES = [
     iconBg: 'bg-apex-gold/10',
     iconColor: 'text-apex-gold',
     accentColor: 'text-apex-gold',
+  },
+  {
+    title: 'Level 2',
+    tagline: '270cc · Ages 16+',
+    desc: 'For confident racers ready to push harder — more power and more track time.',
+    duration: '5-10 MIN',
+    cc: '270CC',
+    icon: Flame,
+    gradient: 'from-red-500/20 via-red-600/10 to-transparent',
+    borderColor: 'border-apex-red/30',
+    hoverBorder: 'hover:border-apex-red/60',
+    iconBg: 'bg-apex-red/10',
+    iconColor: 'text-apex-red',
+    accentColor: 'text-apex-red',
   },
 ]
 
@@ -165,7 +165,7 @@ export default function Home() {
           </p>
           <a
             href={PHONE_HREF}
-            className="inline-flex items-center gap-2 bg-apex-red text-white text-lg px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 bg-apex-red text-white text-base sm:text-lg px-6 sm:px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
           >
             CALL {PHONE_NUMBER}
             <ChevronRight className="w-5 h-5" />

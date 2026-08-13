@@ -7,23 +7,23 @@ const TIERS = [
     tagline: '200cc',
     desc: 'A perfect starting point — full-power karts built for control and confidence on your first laps.',
     age: '16+ years',
-    duration: '5 Minute Session',
+    duration: '5 or 10 Minute Sessions',
     cc: '200cc Engine',
-    borderColor: 'border-apex-red/50',
-    tagColor: 'text-apex-red',
+    featured: true,
+    borderColor: 'border-apex-gold',
+    tagColor: 'text-apex-gold',
     // Placeholder photo — swap for the real Level 1 kart photo when available.
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0zcK4n62F2TqYofkJgJYF3gX4zpsI_2txIeXimWgBxjj1ohbFQgsdURq3j9SdlNijAytoh6ob2I-bOPwpNu3cT8CRkgjYrFATdIp4zSDfVf7zOXBpkWQJ8U5dgBQ-U-7Z9YJLR2Dous9U6-0ZDsE4MMplB4o38M0HHTZ5HFXnlEkfoexNsDkTkDuOKcfl0P3HwiTn-7TGA2acHnimu61RKmAxIict3q5o19qKBGiRnhRmuU7kWA2ro1IgE7FUFf-I1jMsppYP3_A',
   },
   {
     name: 'Level 2',
     tagline: '270cc',
-    desc: 'Our flagship experience — more power, more track time, for racers ready to push harder.',
+    desc: 'For confident racers ready to push harder — more power and more track time.',
     age: '16+ years',
-    duration: '10 Minute Session',
+    duration: '5 or 10 Minute Sessions',
     cc: '270cc Engine',
-    featured: true,
-    borderColor: 'border-apex-gold',
-    tagColor: 'text-apex-gold',
+    borderColor: 'border-apex-red/50',
+    tagColor: 'text-apex-red',
     // Placeholder photo — swap for the real Level 2 kart photo when available.
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA9vaN-XGLlqTPJWLgkr-g66hZptlvt31RPUM8Q5DNZOcsdoqOXwuwNdoaQXn1OkCLpVb3cy6lmGGBD27iClPF-u6UAx_yfbkLc8xZq4xdUPEnv3O3s2UwSt7N0byPWwWYFeXzn5q-X2VVeV_IFp5mYqEp6qtcQVwfODCHYBObn4NXeiLdG33ietIEsqZ7qHE10-29z4FRhaU463NAzPHIVRKK0kQ8WoZOwGYC0UsLScUiTxj0luOA9PWK1-L4Df0zdWBYK3wgey3M',
   },
@@ -31,7 +31,7 @@ const TIERS = [
 
 const COMPARISON = [
   { feature: 'Age Requirement', level1: '16+', level2: '16+' },
-  { feature: 'Session Duration', level1: '5 min', level2: '10 min' },
+  { feature: 'Session Duration', level1: '5 or 10 min', level2: '5 or 10 min' },
   { feature: 'Engine Displacement', level1: '200cc', level2: '270cc' },
 ]
 
@@ -137,16 +137,16 @@ export default function Experiences() {
             <thead>
               <tr className="border-b border-apex-border">
                 <th className="py-4 pr-8 font-body text-xs uppercase tracking-widest text-apex-muted">Feature</th>
-                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-red">Level 1</th>
-                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-gold">Level 2</th>
+                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-gold">Level 1</th>
+                <th className="py-4 px-4 font-body text-xs uppercase tracking-widest text-apex-red">Level 2</th>
               </tr>
             </thead>
             <tbody>
               {COMPARISON.map((row) => (
                 <tr key={row.feature} className="border-b border-apex-border/30">
                   <td className="py-4 pr-8 text-sm text-apex-muted">{row.feature}</td>
-                  <td className="py-4 px-4 text-sm font-bold">{row.level1}</td>
-                  <td className="py-4 px-4 text-sm font-bold text-apex-gold">{row.level2}</td>
+                  <td className="py-4 px-4 text-sm font-bold text-apex-gold">{row.level1}</td>
+                  <td className="py-4 px-4 text-sm font-bold">{row.level2}</td>
                 </tr>
               ))}
             </tbody>
@@ -161,7 +161,7 @@ export default function Experiences() {
           <p className="text-apex-muted mb-8">Choose your tier and walk in today. No booking required.</p>
           <a
             href={PHONE_HREF}
-            className="inline-flex items-center gap-2 bg-apex-red text-white px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 bg-apex-red text-white px-6 sm:px-10 py-4 rounded-md font-display tracking-widest animate-pulse-glow hover:bg-apex-red-light active:scale-95 transition-all cursor-pointer"
           >
             CALL {PHONE_NUMBER} <ChevronRight className="w-5 h-5" />
           </a>

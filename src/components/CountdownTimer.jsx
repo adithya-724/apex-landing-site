@@ -45,15 +45,15 @@ export default function CountdownTimer() {
         <p className="font-body text-apex-red uppercase tracking-[0.3em] text-sm font-bold mb-4">
           {isPreLaunch ? 'Grand Opening Starts In' : 'Next Race Starts In'}
         </p>
-        <div className="flex justify-center gap-4 md:gap-8">
+        <div className="flex justify-center gap-2 sm:gap-4 md:gap-8">
           {[
             { value: pad(timeLeft.hours), label: 'Hours' },
             { value: pad(timeLeft.minutes), label: 'Minutes' },
             { value: pad(timeLeft.seconds), label: 'Seconds' },
           ].map(({ value, label }) => (
             <div key={label} className="flex flex-col items-center">
-              <div className="bg-apex-black border border-apex-red/30 rounded-lg px-6 py-4 md:px-10 md:py-6 box-glow-red">
-                <span className="font-display text-4xl md:text-6xl text-white text-glow-red">
+              <div className="bg-apex-black border border-apex-red/30 rounded-lg px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 box-glow-red">
+                <span className="font-display text-3xl sm:text-4xl md:text-6xl text-white text-glow-red">
                   {value}
                 </span>
               </div>

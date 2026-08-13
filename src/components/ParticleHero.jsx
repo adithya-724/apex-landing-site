@@ -209,7 +209,7 @@ Coimbatore's Premier Outdoor Karting
           </div>
 
           {/* Headline */}
-          <h1 className="text-7xl md:text-[9rem] lg:text-[12rem] font-display font-black tracking-tighter leading-[0.85] mb-4">
+          <h1 className="text-5xl sm:text-7xl md:text-[9rem] lg:text-[12rem] font-display font-black tracking-tighter leading-[0.85] mb-4">
             <span className="bg-gradient-to-b from-white via-red-200 to-red-600 bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 0 40px rgba(225,29,72,0.3))' }}>
               FEEL THE
             </span>
@@ -254,7 +254,7 @@ Coimbatore's Premier Outdoor Karting
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href={PHONE_HREF}
-              className="group relative px-12 py-5 bg-apex-red hover:bg-apex-red-light text-white font-display text-lg tracking-wider uppercase transition-all duration-300 overflow-hidden box-glow-red cursor-pointer active:scale-95"
+              className="group relative px-8 sm:px-12 py-4 sm:py-5 bg-apex-red hover:bg-apex-red-light text-white font-display text-base sm:text-lg tracking-wider uppercase transition-all duration-300 overflow-hidden box-glow-red cursor-pointer active:scale-95"
             >
               <span className="relative z-10 flex items-center gap-2">
                 CALL {PHONE_NUMBER}
